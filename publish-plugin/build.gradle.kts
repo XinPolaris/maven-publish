@@ -126,19 +126,22 @@ afterEvaluate {
         }
         repositories {
             maven {
+                isAllowInsecureProtocol = true
                 val isLocal = version.toString().endsWith("LOCAL")
                 val repoUrl = if (version.toString().endsWith("SNAPSHOT")) {
-                    "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+                    "http://10.49.2.61:8081/nexus/content/repositories/snapshots"
                 } else if (isLocal) {
                     layout.buildDirectory.dir("repos/locals").get().asFile.path
                 } else {
-                    "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+                    "http://10.49.2.61:8081/nexus/content/repositories/releases"
                 }
                 url = uri(repoUrl)
                 if (!isLocal) {
                     credentials {
-                        username = this@afterEvaluate.ext["ossrh.username"].toString()
-                        password = this@afterEvaluate.ext["ossrh.password"].toString()
+//                        username = this@afterEvaluate.ext["ossrh.username"].toString()
+//                        password = this@afterEvaluate.ext["ossrh.password"].toString()
+                        username = "deployment"
+                        password = "deployment123"
                     }
                 }
             }
@@ -207,7 +210,7 @@ object PluginInfo {
     const val group = "cn.dorck"
     const val artifactId = "component-publisher"
     const val implementationClass = "com.dorck.android.upload.ComponentUploadPlugin"
-    const val version = "1.0.4"
+    const val version = "1.0.5-SNAPSHOT"
     const val displayName = "Upload library for Android"
     const val description = "Gradle plugin to publish library component quickly."
     const val url = "https://github.com/Moosphan/component-publisher.git"

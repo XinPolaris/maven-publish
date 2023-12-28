@@ -45,6 +45,7 @@ class ComponentUploadPlugin : Plugin<Project> {
         project.mavenPublishingDsl {
             // Configure maven repositories.
             repositories.maven {
+                isAllowInsecureProtocol = true
                 val isLocalPublish = publishOptions.version.endsWith("-LOCAL")
                 val repoUri: URI = if (publishOptions.version.endsWith("-SNAPSHOT")) {
                     URI.create(publishOptions.snapshotRepoUrl)
@@ -121,6 +122,11 @@ class ComponentUploadPlugin : Plugin<Project> {
             password = password.takeIfBlank { getProperty(Constants.REPOSITORY_PASSWORD_KEY) }
             releaseRepoUrl = releaseRepoUrl.takeIfBlank { getProperty(Constants.REPOSITORY_RELEASE_URL) }
             snapshotRepoUrl = snapshotRepoUrl.takeIfBlank { getProperty(Constants.REPOSITORY_SNAPSHOT_URL) }
+
+            userName = userName.takeIfBlank { "deployment" }
+            password = password.takeIfBlank { "deployment123" }
+            releaseRepoUrl = releaseRepoUrl.takeIfBlank { "http://10.49.2.61:8081/nexus/content/repositories/releases" }
+            snapshotRepoUrl = snapshotRepoUrl.takeIfBlank { "http://10.49.2.61:8081/nexus/content/repositories/snapshots" }
         }
         if (version.checkIfLocalVersion()) {
             return
