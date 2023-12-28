@@ -48,9 +48,9 @@ data class AndroidLibrarySingleVariantPublication(
 
     override fun setupPublication(project: Project, configure: MavenPublication.() -> Unit) {
         project.run {
-            repositories {
-                google()
-            }
+//            repositories {
+//                google()
+//            }
             publications?.create(defaultMavenPublication, MavenPublication::class.java) {
                 configure()
                 val component = components.findByName(variantName)
