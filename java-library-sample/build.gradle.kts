@@ -1,6 +1,6 @@
 plugins {
     id("java-library")
-    id("cn.dorck.component.publisher") version "1.0.4"
+    id("cn.dorck.component.publisher")
 //    id ("component-publisher") version "1.0.0"
 }
 

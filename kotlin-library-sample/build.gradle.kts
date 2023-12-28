@@ -1,12 +1,13 @@
 plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
-    id("cn.dorck.component.publisher") version "1.0.4"
+    id("cn.dorck.component.publisher")
 }
 
 publishOptions {
-    group = "com.dorck.kotlin"
-    version = "1.0.0-LOCAL"
+    group = "com.fotile.fiks"
+    artifactId = "kotlin-library-sample"
+    version = "1.0.0-SNAPSHOT"
 }
 
 java {
