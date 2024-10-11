@@ -23,7 +23,7 @@ open class PublishOptionsExtension {
     // Whether to package the source code.
     var packSourceCode: Boolean = true
     // Will transitive dependencies be required.
-    var transitiveDependency: Boolean = false
+    var transitiveDependency: Boolean = true
 
     override fun toString(): String {
         return "{\n" +

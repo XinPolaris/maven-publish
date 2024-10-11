@@ -1,7 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     dependencies {
-        classpath 'cn.dorck:component-publisher:1.0.4-SNAPSHOT'
+//        classpath 'cn.dorck:component-publisher:1.0.4-SNAPSHOT'
+        classpath 'com.fotile.fiks:fiks-publish:1.0.0-SNAPSHOT'
     }
 }
 

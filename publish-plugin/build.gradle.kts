@@ -205,12 +205,12 @@ tasks.check {
 }*/
 
 object PluginInfo {
-    const val id = "cn.dorck.component.publisher"
+    const val id = "fiks-publish"
     const val name = "componentPublishPlugin"
-    const val group = "cn.dorck"
-    const val artifactId = "component-publisher"
+    const val group = "com.fotile.fiks"
+    const val artifactId = "fiks-publish"
     const val implementationClass = "com.dorck.android.upload.ComponentUploadPlugin"
-    const val version = "1.0.5-SNAPSHOT"
+    const val version = "1.0.0-SNAPSHOT"
     const val displayName = "Upload library for Android"
     const val description = "Gradle plugin to publish library component quickly."
     const val url = "https://github.com/Moosphan/component-publisher.git"

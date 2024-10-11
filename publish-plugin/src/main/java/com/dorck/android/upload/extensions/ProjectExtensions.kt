@@ -82,7 +82,7 @@ fun Project.setupPlatformPublication(
 
 fun Project.createCustomPublishingTask(onFinish: () -> Unit) {
     tasks.register("publishComponent") {
-        group = "publisher"
+        group = "fiks"
         if (isAndroidLibrary()) {
             dependsOn(tasks.named("assemble${getDefaultBuildType().formatCapitalize()}"))
         }
@@ -95,6 +95,7 @@ fun Project.createCustomPublishingTask(onFinish: () -> Unit) {
         }.doLast {
             onFinish()
         }
+        description = "组件上传工具"
     }
 }
 

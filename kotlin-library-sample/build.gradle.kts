@@ -1,7 +1,8 @@
 plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
-    id("cn.dorck.component.publisher")
+    //id("cn.dorck.component.publisher")
+    id("fiks-publish")
 }
 
 publishOptions {
